@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="footer.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Arbutus' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bilbo Swash Caps' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Barrio' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
+<style>
+
+body {font-family: Verdana, sans-serif; margin:2px;background-image: radial-gradient(gray, whitesmoke,black);}
+.mySlides {display: none}
+img {
+  vertical-align: middle;
+  max-height:752px;   
+}
+
+/* Slideshow container */
+.slideshow-container {  
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.8s ease;
+  border-radius: 0 20px 20px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 20px 0 0 20px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color:white;
+  font-size: 50px;  
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Akronim';
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .7} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/*overlay */
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);  
+}
+
+#list{
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  color: white;
+  text-align: center;
+}
+
+/*menu top right*/
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-family: 'PT Serif', serif;
+  text-decoration:none;
+}
+
+/* Top left text name of web*/
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  color:wheat;
+  font-size: 90px;
+  font-family: 'Arbutus';
+  letter-spacing: 1.5px;
+}
+/*sticky navbar*/
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  z-index: 5;
+  opacity: 1;
+  overflow: hidden;
+  background-color: #333;
+  font-family: 'PT Serif', serif;
+  box-shadow:0 4px 50px 0 rgba(0,0,0,0.4),0 4px 20px 0 rgba(0,0,0,0.8);
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:25px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: black;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+  opacity: 1;
+
+}
+.t1{
+  font-family: 'Barrio';
+  font-weight: 900;
+  font-size: 35px;
+  margin-left: 110px;
+}
+
+.t2{
+  font-family: 'Bilbo Swash Caps';
+  font-size: 35px;
+  font-weight: lighter;
+  letter-spacing: 1.5px;
+   margin-left: 60px;
+   margin-right: auto;
+   box-shadow:0 4px 20px 0 rgba(0,0,0,0.4),0 4px 20px 0 rgba(0,0,0,0.6);
+}
+.contact_form{
+  font-family: 'Bilbo Swash Caps';
+  font-size: 35px;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  margin: 30px 700px auto 30px;
+  margin-bottom: -250px;
+  margin-right: 800px;
+   box-shadow:0 4px 20px 0 rgba(255, 254, 254, 0.8),0 4px 20px 0 rgb(255, 255, 255);
+   padding: 20px 20px 50px 20px;
+}
+.video{
+background-clip: padding-box;
+background-color: black;
+border: 3px solid rgba(0, 0, 0, 0.4);
+border-radius: 15px 15px 15px 15px;
+padding: 10px;
+}
+
+/*for overlay text on images*/
+.container {
+  position: sticky;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container:hover .image {
+  opacity: 0.5;
+}
+.container:hover .middle {
+  opacity: 0.8;
+}
+.t {  
+  color: black;
+  font-size: 65px;
+  font-weight: 1000;
+  padding-left: 250px; 
+  line-height: 55px; 
+  letter-spacing: 1px;
+  font-family: 'Annie Use Your Telescope';  
+}
+.row {
+            display: flex;
+            }
+
+            .content_img{
+             position: relative;
+             width: 450px;
+             height: 450px;
+             float: left;
+             margin-right: 50px;
+             flex: 33.33%;
+             padding: 5px;
+            }
+            
+            
+            .content_img div{
+             position: absolute;
+             bottom: 0;
+             right: 0;
+             background: black;
+             color: white;
+             margin-bottom: 5px;
+             font-family: sans-serif;
+             opacity: 0;
+             visibility: hidden;
+             -webkit-transition: visibility 0s, opacity 0.5s linear; 
+             transition: visibility 0s, opacity 0.5s linear;
+            }
+            
+            
+            .content_img:hover{
+             cursor: pointer;
+            }
+            
+            .content_img:hover div{
+             width: 360px;
+             height: 360px;
+             padding: 20px 20px 20px 20px;
+             visibility: visible;
+             opacity: 0.7; 
+            }
+            .feedback-input {
+  color:white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:600;
+  font-size: 20px;
+  border-radius: 40px;
+  line-height:25px;
+  background-color: transparent;
+  border:2px solid rgb(16, 191, 250);
+  transition: all 0.3s;
+  padding: 10px 30px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:3px solid rgb(214, 77, 203);line-height:40px; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'PT Serif', serif;
+  width: 50%;
+  background-image: linear-gradient(to top right,red, rgb(255, 61, 94),pink);
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:black; }
+</style>
+</head>
+<body>
+
+  <div class="slideshow-container">
+
+      
+
+    <div class="mySlides fade">
+      <img src="https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg" style="width:100%">
+      <div class="text"><q>Travelling leaves you speechless and then turns you into a storyteller.</q></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="https://s1.1zoom.me/b7068/374/Houses_Roads_USA_Coast_Night_New_York_City_564596_3840x2160.jpg" style="width:100%">
+      <div class="text"><q>All journeys have secret destination of which traveler is unaware of.</q></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="https://thetravelintern.com/wp-content/uploads/2016/07/Taj-Mahal-Photography-Guide-5.jpg" style="width:100%">
+      <div class="text"><q>It feels good to be lost in the right direction.</q></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="https://www.itsjustlight.com/wp-content/uploads/2015/10/Copenhagen-Denmark-Travel-Photography.jpg" style="width:100%">
+      <div class="text"><q>Cover the world before it covers you.</q></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Eiffel_tower_at_dawn_horizontal.jpg" style="width:100%">
+      <div class="text"><q>The most beautiful in the world is ofcourse, the world itself.</q></div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!--overlay effect for menu-->
+    <div><div id="overlay" onclick="off()">
+        <div id="text">          
+          <ul>
+          <li id="list"><a class="active" href="Home2.html" style="color: rgb(207, 203, 203);font-family: 'PT Serif', serif;text-decoration: none;">Home</a></li>
+          <li id="list"><a href="" style="color: rgb(207, 203, 203);font-family: 'PT Serif', serif;text-decoration: none;">Things to do</a></li>
+          <li id="list"><a href="Tips and Tricks1.html" style="color: rgb(207, 203, 203);font-family: 'PT Serif', serif;text-decoration: none;">Destinations</a></li>
+          <li id="list"><a href="About.html" style="color: rgb(207, 203, 203);font-family: 'PT Serif', serif;text-decoration: none;">About</a></li>
+          <li id="list"><a href="Login.html" style="color: rgb(207, 203, 203); font-family: 'PT Serif', serif;text-decoration: none;">Login</a></li>
+      </ul>
+      </div>
+      </div>
+      <!--adding menu on top right-->
+      <div>
+        
+        <div class="top-right"><button style="background-color:black;color:white;height:50px;width:80px;padding:10px 10px;font-size: 20px;font-family: 'PT Serif', serif;" onclick="on()">Menu</button></div>
+      </div>
+      </div>
+      <!--adding webname on top left-->
+      <div>
+        <div class="top-left">
+          Trouvaille
+        </div>
+      </div>
+    </div>
+    <!--navbar-->
+    
+    <div id="navbar">
+        <a style="padding: 0px;"><img src="http://www.pngmart.com/files/6/Ship-PNG-Free-Download.png" height="60" width="60"></a>
+        <a class="active" href="Home2.html">Home</a>
+        <a href="javascript:void(0)">Things to do</a>
+        <a href="Tips and Tricks1.html">Destinations</a>
+        <a href="About.html">About</a>
+        <a href="Login.html">Login</a>
+      
+    </div><br><br>
+    <div>
+    <div style="float: left;">
+    <br><br><br><br><br><div class="t1">where the impossible is possible</div><br>
+    <div class="t2" align="center" style="margin-left: 30px;">From the driest desert in the world up north to<br>eternal glaciers and invented waterfalls down south,<br>Trouvaille extends travelers an invitation that is hard to<br>turn down.</div>
+    </div><br>
+      <video class="video" autoplay muted loop height="350" style="float:right;margin-right: 100px;">
+        <source src="file:///C:/Users/Sangeerthana%20B/Pictures/travel/3%20Years%20of%20Travel%20in%203%20Minutes%20(Lessons%20and%20Adventures).mp4" type="video/mp4">
+      </video><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br><br><br>
+    </div>
+    <div class="t1" style="text-align: center;">Plan your memorable trip with us!</div><br>
+    <div class="t2" align="center" style="margin-right: 200px;margin-left: 200px;">Journeys are the essential text of the human experience—the journey from birth to death,<br>from innocence to wisdom, from ignorance to knowledge,<br>from where we start to where we end.<br>
+     </div>
+    </div><br><br>
+    <p style="text-align: center;
+    padding: 14px 16px;
+    text-decoration: underline;
+    font-size:40px;font-family: 'PT Serif', serif;">Packages We offer :</p>
+    <!--table of images-->
+        <table border="0">
+            <tr>
+                <td>
+                    <div class="container">
+                    <img src="https://miro.medium.com/max/9216/1*siqenXUFvg4iinAWF7o-ow.jpeg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Adventure Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                    <img src="https://picturecorrect-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/capturing-wildlife-tips.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Wildlife Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container"> 
+                    <img src="https://i.pinimg.com/originals/56/87/fa/5687fa955c76b376e98b7d5a1e1ffa93.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Pilgrimage Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                    <img src="https://img.theculturetrip.com/768x432/wp-content/uploads/2016/07/13973992868_d6db5a90a2_k.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Cultural Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                    <img src="https://mustsharenews.com/wp-content/uploads/2019/11/Genting-Dream-Cruise-9.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Cruise Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                    <img src="https://balicheapesttours.com/dummy/honey6.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Honeymoon Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="container">
+                    <img src="https://i2.wp.com/www.hisour.com/wp-content/uploads/2019/07/Spanish-Empire-historical-tourism.jpg?fit=960%2C640&ssl=1" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Historical Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                    <img src="https://letsgokerala.in/wp-content/uploads/2016/07/n14.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Village Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="container">
+                    <img src="https://www.travelogyindia.com/storage/app/itinerary/42/kerala-ayurveda-tour.jpg" alt="not available" class="image" style="width:450px;border-radius: 50%;
+                    padding: 25px;">
+                    <div class="middle">
+                            <div class="t">Medical Tourism Package</div>
+                    </div>
+                    </div>
+                </td>
+                </tr>
+        </table>
+        <hr size="10px" color="black" style="background-image: linear-gradient(to right, violet,indigo,blue);">
+        <p>
+          <div class="row">
+          <div class="content_img">
+              <img src='https://wovenmagazine.com/content/uploads/2019/10/01_Antelope_wide.jpg' width='500' height='500' style="margin: 50px 0px;">
+              <div>Climbing into the deep slot canyons east of Page, 
+                  Arizona, visitors glimpse a cast of mythical symbols carved by centuries of 
+                  desert sandstone through the eyes of Navajo guides. <br /><br />There is an unmistakable awe that 
+                  overtakes each who come to walk this narrow path, a feeling mirrored by the majesty of all creation, 
+                  infinite in wonder, unshaken by man’s opinions. <br /><br />Tiptoeing through the canyon will take you back in time, 
+                  imagining how these smooth edges and striated rings of age coalesce into a memory only the earth itself could keep. 
+                  <hr />
+                  Photo by Christi Barnes  <br />Words by Christi Barnes
+              </div>
+          </div>
+          <div class="content_img">
+              <img src='https://wovenmagazine.com/content/uploads/2018/04/01_JoshuaTree.jpg' width='500' height='500' style="margin: 50px 0px;">
+              <div>With staggering silhouettes, hooked but friendly, Joshua Trees wave their hello to visitors of the rocky fields
+                   situated between the Colorado and Mojave Deserts. They are both greeter and guide to the geological wonders no man can make nor explain.
+                  <br />
+                  Gather out of star-dust,<br />
+                  Earth-dust,<br />
+                  Cloud-dust,<br />
+                  Storm-dust,<br />
+                  And splinters of hail,<br />
+                  One handful of dream-dust<br />
+                  Not for sale.<br />
+                  <hr />
+                  Photo by Langston Hughes  <br />Words by Langston Hughes
+              </div>
+          </div>
+          <div class="content_img">
+              <img src='https://wovenmagazine.com/content/uploads/2016/11/00e_forage_horizontal.jpg' width='500' height='500' style="margin: 50px 0px;">
+              <div>With fall in the air and whispers of snow in the northwest, our thoughts turn to the woods and the moments of respite they 
+                  offer against the busyness that, too, comes with this crisp season. It’s a season of magic, of taking time out to reimagine 
+                  our lives through a more thankful lens, and one, too, of surprises and gifts.<br /><br />
+  
+                  One golden gift the woods offer in a botanical game of hide and seek is the chanterelle, a meaty, 
+                  trumpeting mushroom that disguises itself amongst the trees and ferns, blossoming in the deep, moist darkness of the forest floor.
+                  <hr />
+                  Photo by woven<br />
+                  Words by Harry Charrel
+              </div>
+          </div>
+          </div>
+          </p>
+          <br />
+          <p>
+          <div class="row">
+          <div class="content_img">
+              <img src='https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg' width='500' height='500' style="margin: 50px 0px;">
+              <div>London...<br />
+                  Green is the plane-tree in the square, the other trees are brown;They droop and pine for country air;
+                  The plane-tree loves the town.<br />
+                  
+                  Here from my garret-pane, I mark the plane-tree bud and blow, shed her recuperative bark, 
+                  And spread her shade below.<br />
+                  
+                  Among her branches, in and out,the city breezes play; The dun fog wraps her round about;
+                  Above, the smoke curls grey.<br />
+                  
+                  Others the country take for choice, and hold the town in scorn; But she has listened to the voice
+                  On city breezes borne.<br />
+                  <hr />
+                  Photo by woven<br />
+                  Words by Amy Levy
+              </div>
+          </div>
+          <div class="content_img">
+              <img src='https://photos.mandarinoriental.com/is/image/MandarinOriental/paris-2017-home?$MO_masthead-property-mobile$' width='500' height='500' style="margin: 50px 0px;">
+              <div>The city's all a-shining ,beneath a fickle sun, a gay young wind's a-blowing, the little shower is done.
+                  But the rain-drops still are clinging and falling one by one --Oh it's Paris, it's Paris,And spring-time has begun.
+                  <br /><br />
+                  I know the Bois is twinkling in a sort of hazy sheen, and down the champs the gray old arch stands cold and still between.
+                  But the walk is flecked with sunlight.
+                  <br /><br />
+                  The sun's gone in, the sparkle's dead, there falls a dash of rain, but who would care when such an air comes blowing up the Seine?
+                  And still Ninette sits sewing beside her window-pane, when it's Paris, it's Paris,And spring-time's come again.
+                  <hr />
+                  Photo by woven<br />
+                  Words by Sara Teasdale
+              </div>
+          </div>
+          <div class="content_img">
+              <img src='https://www.gannett-cdn.com/media/2018/12/15/USATODAY/usatsports/MotleyFool-TMOT-657f0436-21e9af86.jpg' width='500' height='500' style="margin: 50px 0px;">
+              <div>About me young careless feet Linger along the garish street; Above, a hundred shouting signs Shed down their bright fantastic glow<br />
+                  Upon the merry crowd and lines Of moving carriages below. Oh wonderful is Broadway — only My heart, my heart is lonely.
+                  <br /><br />
+                  Desire naked, linked with Passion, goes trutting by in brazen fashion; From playhouse, cabaret and inn the rainbow lights of Broadway blaze<br />
+                  All gay without, all glad within; As in a dream I stand and gaze at Broadway, shining Broadway — only My heart, my heart is lonely.
+                  <hr />
+                  Photo by woven<br />
+                  Words by Claude McKay
+              </div>
+          </div>
+  
+          </div>
+          </p>
+    <br><br><br><br><br><br>
+    <hr size="10px" color="black" style="background-image: linear-gradient(to right, violet,indigo,blue);">
+<div style="background:rgb(30,30,40);padding: 20px;margin: 10px; ">
+    <div class="contact_form"  style="float: left;color: cornsilk;float: left;">
+        <h2  style="font-weight: bold;text-align: center;font-size: 25px;letter-spacing: 4px;word-spacing: 7px;color: cyan;">Drop your comments here</h2>
+        <p>We would love to here from you!</p>
+        <p>You can send us a message using our contact form or reach us using the information below.</p>
+    </div>
+    <div  class="footer-items" style="margin-top: 300px; margin-left: 200px;margin-bottom: -400px;">
+        <ul>
+            <p>* * * * * * * * * * * * * * </p>
+        <li><i class="fa fa-phone" aria-hidden="true"></i>+91 9786577631</li>
+        <li><i class="fa fa-envelope" aria-hidden="true"></i>trouvaille123@gmail.com</li>
+        <p>* * * * * * * * * * * * * * </p>
+      </ul>
+      </div>
+    <div style="max-width:420px;margin-top: -50px;margin-left: 900px;">
+       <form>      
+        <input name="name*" type="text" class="feedback-input" placeholder="Name" style="font-family: 'PT Serif', serif;" required/>   
+        <input name="email*" type="email" class="feedback-input" placeholder="Email"  style="font-family: 'PT Serif', serif;"/>
+        <input name="phone*" type="text" class="feedback-input" placeholder="Phone number" style="font-family: 'PT Serif', serif;" />
+        <textarea name="text" class="feedback-input" placeholder="Comment" style="font-family: 'PT Serif', serif;"></textarea>
+        <center><input type="submit" value="SUBMIT"/></center>
+      </form></div>
+    </div>
+    <hr size="10px" color="black" style="background-image: linear-gradient(to right, violet,indigo,blue);">
+      <br>Trouvaille
+    Travel in its purest form requires no certain destination, no fixed itinerary, no advance reservation and no return ticket, for you are trying to launch yourself onto the haphazard drift of things, and put yourself in the way of whatever changes the journey may throw up.
+    <div class="footer">
+        <div class="inner-footer">
+
+            <div class="footer-items">
+                <h1 style="font-family: cursive;">TROUVAILLE...</h1>
+                <p>
+                        “Happiness is not a station you arrive at, but a manner of travelling.” <br>
+                        <i style="color:palegoldenrod;"></center>~Margaret Lee Runbeck</center></i>
+                </p>
+            </div>
+                        <div class="footer-items">
+                            <h2>About</h2>
+                            <div class="border"></div>
+                            <ul>
+                                <a href="Home2.html"><li>Home</li></a>
+                                <a href=""><li>Things to do</li></a>
+                                <a href="Tips and Tricks1.html"><li>Tips and Tricks</li></a>
+                                <a href="About.html"><li>About</li></a>
+                                <a href="Login.html"><li>Login</li></a>
+                            </ul>
+                        </div>
+                                    <div class="footer-items">
+                                        <h2>Travel Tips</h2>
+                                        <div class="border"></div>
+                                        <ul>
+                                            <a href=""><li>Save Money For Travel</li></a>
+                                            <a href=""><li>Travel Planning</li></a>
+                                            <a href=""><li>What To Pack</li></a>
+                                            <a href="Tips and Tricks1.html"><li>Destinations</li></a>
+                                            <a href=""><li>Explore And Discover</li></a>
+                                                
+                                        </ul>
+                                    </div>
+                                                <div class="footer-items">
+                                                    <h2>Contact Us</h2>
+                                                    <div class="border"></div>
+                                                    <ul>
+                                                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>109/98,Vanniyar Nagar,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meyyanur Main Road,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Delhi-860 003.<br></li><br><br>
+                                                        <li><i class="fa fa-phone" aria-hidden="true"></i>+91 9786577631</li>
+                                                        <li><i class="fa fa-envelope" aria-hidden="true"></i>trouvaille123@gmail.com</li>
+                                                    </ul>
+                                                    <div class="social-media">
+                                                    <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="https://twitter.com/login"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="https://www.google.com/"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+        </div>
+        <div class="footer-bottom">
+                © Copyright 1995-2020,Travel Blog.All rights reserved.
+        </div>
+    </div>
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+  }
+
+//overlay effect script
+
+  function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+  </script>
+<script>
+    window.onscroll = function() {myFunction()};
+    
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+    </script>
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 4000); // Change image every 2 seconds
+    }
+    </script>
+    
+</body>
+</html>
+
+

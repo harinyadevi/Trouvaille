@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&family=Dancing+Script:wght@700&family=Girassol&family=Lobster&family=Merriweather:wght@700&family=Pacifico&display=swap"
+             rel="stylesheet">
+            
+        <style>
+            @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+            body{
+                background-color: black;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 15px;
+                background-image: radial-gradient(rgb(70, 70, 70),rgb(54, 54, 54),rgb(29, 29, 29),black);
+                zoom:0.9;
+            }
+            .page{
+                position: relative;
+            }
+            /* Style the navigation bar links */
+            .navbar a {
+              background-image: linear-gradient(to bottom,black,rgb(68, 68, 68));
+              float: left;
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 20px;
+              text-decoration: none;
+              font-size: 20px;
+              font-family: 'Merriweather', serif;
+            }
+            /* Right-aligned link */
+            .navbar a.right {
+              float: right;
+            }
+            /* Change color on hover */
+            .navbar a:hover {
+              background-color: #ddd;
+              border-radius: 10px;
+              color: black;
+              background-image: linear-gradient(to top,black,white);
+}
+           
+h2{
+                color: wheat;
+                font-family: 'Girassol', cursive;
+                font-size: 45px;
+                letter-spacing: 3px;
+                word-spacing: 5px;
+            }
+            p{
+                color: white;
+                font-family: 'Bitter', serif;
+                font-size: 25px;
+                float: center;
+            }
+            
+
+.wrapper.slide:hover img {
+    margin-top: -100px;
+}
+
+.wrapper.slide img:hover {
+    opacity: 0.4;
+}
+
+.wrapper img {
+    transition: 1s;
+    display: block;
+}
+/* width */
+::-webkit-scrollbar {
+             width: 25px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+              box-shadow: inset 0 0 10px ghostwhite; 
+              border-radius: 20px;
+            }
+ 
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+              background-image: linear-gradient(violet,indigo,blue); 
+              border-radius: 20px;
+            }
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+              background: rgb(94, 231, 255);
+            }
+            .search {
+  width: 100%;
+  display: flex;
+}
+
+.searchTerm {
+  width: 150%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 7px;
+  padding-left: 25px;
+  height: 25px;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  color: #9DBFAF;
+  font-size: 20px;
+  font-family: 'Girassol', cursive;
+                letter-spacing: 2px;
+                word-spacing: 4px;
+}
+
+.searchTerm:focus{
+  color: navy;
+  font-weight: bold;
+  border: 4px solid rgb(26, 1, 252);
+  line-height: 30px;
+}
+
+.searchButton {
+  width: 60px;
+  height: 45px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  font-family: 'Open Sans', sans-serif;
+  width: 30%;
+  position:relative;
+  margin-bottom: 5px;
+  transform: translate(-50%, -50%);
+}
+table tr td,img{
+  background-image: radial-gradient(whitesmoke,rgb(180, 180, 180),white);
+}
+</style>
+    </head>
+    <body>
+            <center><h2>The most popular destinations around the world...</h3></center>
+            <div class="page">
+                <table cellpadding="5" cellspacing="30" width="1500"> 
+                    <tr style="background-color: lavenderblush;">
+                            <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                                <img src="https://toursinindia.in/images/tourism-holidays/maldives-islands-tourist-place2.jpg" height="360" width="500" alt="MALDIVES">
+                                <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TUFMRElWRVM/smilen.png" height="30">
+                        </td>
+                   
+                        <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                            <img src="https://www.accessible-japan.com/wp-content/uploads/2015/05/pagoda_fuji_mobile.jpg" height="360" width="500" alt="JAPAN">
+                            <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/SkFQQU4/smilen.png" height="30">
+                    </td>
+                    <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                            <img src="https://misstourist.com/wp-content/uploads/2018/06/Barcelona-Passes-%E2%80%93-which-one-is-worth-the-money-barcelona-9-sagrada-familia.jpg" height="360" width="500" alt="BARCELONA">
+                            <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/QkFSQ0VMT05B/smilen.png" height="30">
+                    </td>
+                    
+                </tr>
+                <tr style="background-color: lavenderblush;">
+                        <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                            <img src="https://www.roadaffair.com/wp-content/uploads/2019/01/bran-castle-brasov-transylvania-romania-shutterstock_518343055-1024x683.jpg" height="333" width="500" alt="TRANSYLVANIA">
+                            <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/VFJBTlNZTFZBTklB/smilen.png" height="30">
+                        </td>
+                        <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                                <img src="https://www.planetware.com/photos-large/F/france-paris-eiffel-tower.jpg" height="333" width="500" alt="PARIS">
+                                <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/UEFSSVM/smilen.png" height="30">
+                        </td>
+                        <td class="wrapper slide"><CENTER><label><a href="https://www.google.com/" target="_blank">
+                                <img src="https://marketingplatform.vivial.net/sites/default/files/inline_images/car-service-brooklyn-ny1.jpg"  height="333" width="500" alt="NEW YORK">
+                                <img src="https://see.fontimg.com/api/renderfont4/gKW6/eyJyIjoiZnMiLCJoIjo0MSwidyI6MTI1MCwiZnMiOjMzLCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/TkVXIFlPUks/smilen.png" height="30">
+                        </td>    
+                </tr>
+            </table>
+        </div>
+        <div class="navbar">
+                <a href="destination1.html">&lt;&lt;Previous Page</a>
+                <a href="destination1.html">1</a>
+                <a href="destination2.html">2</a>
+                <a href="Home2.html" class="right" target="_blank">HOME</a>
+        </div>
+        <br><br><br>
+        <center><p>Can't find what you are looking for? Use the search form below to search the site!</p><br>
+            <div class="wrap">
+                    <div class="search">
+                       <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                       <button type="submit" class="searchButton">
+                         <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                 </div>
+        
+    </body>
+</html>
